@@ -1,0 +1,236 @@
+/* ============================================= */
+/* --- RESPONSIVE MOBILE (768px o menos) --- */
+/* ============================================= */
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 100%;
+        --mobile-sidebar-height: 85vh;
+    }
+
+    body {
+        background: white;
+        touch-action: pan-x pan-y;
+    }
+
+    #sidebar-toggle {
+        display: flex;
+        bottom: 20px;
+        right: 20px;
+        z-index: 3000;
+    }
+
+    #sidebar {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: var(--mobile-sidebar-height);
+        max-height: 100%;
+        transform: translateY(100%);
+        box-shadow: 0 -8px 32px rgba(0,0,0,0.2);
+        border-right: none;
+        border-top: 1px solid rgba(0,0,0,0.08);
+        border-radius: 20px 20px 0 0;
+        overflow: hidden;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    #sidebar.active {
+        transform: translateY(0);
+    }
+
+    .sidebar-header {
+        border-radius: 20px 20px 0 0;
+        padding: 25px 20px 20px;
+    }
+
+    .close-sidebar-btn {
+        display: flex;
+    }
+
+    #sidebar.active ~ #sidebar-toggle {
+        display: none;
+    }
+
+    .section-card {
+        padding: 15px;
+        margin-bottom: 15px;
+        position: relative; /* Para contener resultados de búsqueda */
+    }
+
+    input[type="text"] {
+        padding: 16px 16px 16px 48px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 14px;
+        min-height: 44px;
+    }
+
+    /* MEJORA: Mostrar instrucciones en móvil dentro del sidebar */
+    #floating-directions {
+        display: none !important;
+    }
+
+    #mobile-instructions {
+        display: block;
+    }
+
+    .btn-instr-sidebar {
+        display: block !important;
+        margin-top: 15px;
+    }
+
+    /* ============================================= */
+    /* --- FIX CRÍTICO: RESULTADOS DE BÚSQUEDA EN MÓVIL --- */
+    /* Ahora aparecerán DEBAJO del input, no encima */
+    /* ============================================= */
+    
+    /* Asegurar que el contenedor sea relativo */
+    .form-group {
+        position: relative !important;
+    }
+    
+    .input-wrapper {
+        position: relative !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* RESULTADOS DE BÚSQUEDA - SIMPLE Y FUNCIONAL */
+    .search-results {
+        /* POSICIÓN: Absoluta dentro del form-group */
+        position: absolute !important;
+        top: 100% !important; /* JUSTO DEBAJO del input */
+        left: 0 !important;
+        right: 0 !important;
+        
+        /* ELIMINAR CUALQUIER TRANSFORM QUE CAUSE PROBLEMAS */
+        transform: none !important;
+        -webkit-transform: none !important;
+        translate: none !important;
+        
+        /* DIMENSIONES */
+        width: 100% !important;
+        max-height: 200px !important;
+        min-height: auto !important;
+        
+        /* APARIENCIA */
+        background: white !important;
+        border: 1px solid #ddd !important;
+        border-top: none !important;
+        border-radius: 0 0 8px 8px !important;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15) !important;
+        
+        /* SCROLL */
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        
+        /* VISIBILIDAD */
+        z-index: 9999 !important;
+        display: none !important; /* Oculto por defecto */
+        opacity: 1 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Cuando están activos - MUY IMPORTANTE */
+    .search-results.active {
+        display: block !important;
+        /* Sin transformaciones */
+        transform: none !important;
+        top: 100% !important; /* Reforzar que esté debajo */
+        animation: none !important;
+    }
+    
+    /* Ajuste para cuando el sidebar está abierto */
+    #sidebar.active .search-results {
+        position: absolute !important; /* Mantener absoluto */
+        z-index: 10001 !important;
+        max-height: 180px !important;
+    }
+    
+    /* Items de la lista */
+    .search-results li {
+        padding: 14px 18px !important;
+        margin: 0 !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        background: white !important;
+        color: #333 !important;
+        transition: background-color 0.2s !important;
+        min-height: 56px !important;
+    }
+    
+    .search-results li:last-child {
+        border-bottom: none !important;
+    }
+    
+    .search-results li:hover,
+    .search-results li:active {
+        background-color: var(--prov-green-light) !important;
+    }
+    
+    /* Iconos en los resultados */
+    .search-results li i {
+        font-size: 18px !important;
+        color: var(--prov-green-main) !important;
+        width: 20px !important;
+        text-align: center !important;
+    }
+    
+    /* Scrollbar styling para móvil */
+    .search-results::-webkit-scrollbar {
+        width: 4px !important;
+    }
+    
+    .search-results::-webkit-scrollbar-track {
+        background: #f1f1f1 !important;
+    }
+    
+    .search-results::-webkit-scrollbar-thumb {
+        background: var(--prov-green-main) !important;
+        border-radius: 2px !important;
+    }
+    
+    /* Ajustes para seguimiento GPS en móvil */
+    .tracking-panel {
+        bottom: 100px;
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    .breadcrumb-trail {
+        weight: 2px;
+    }
+    
+    .remaining-route {
+        weight: 4px;
+    }
+}
+
+/* ============================================= */
+/* --- PANTALLAS MUY PEQUEÑAS (iPhone SE, etc.) --- */
+/* ============================================= */
+@media (max-width: 375px) {
+    input[type="text"] {
+        font-size: 14px !important;
+        padding: 14px 14px 14px 42px !important;
+    }
+    
+    .search-results li {
+        padding: 12px 16px !important;
+        font-size: 14px !important;
+    }
+    
+    .search-results {
+        max-height: 150px !important;
+    }
+}

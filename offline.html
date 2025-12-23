@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sin conexión - Caminos Calidad Providencia</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            color: white;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        .features {
+            text-align: left;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .features li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">📶</div>
+        <h1>Sin conexión a internet</h1>
+        <p>La aplicación necesita conexión a internet para cargar algunos datos.</p>
+        
+        <div class="features">
+            <h3>Funciones disponibles offline:</h3>
+            <ul>
+                <li>✅ Ver mapa base (si ya estaba cargado)</li>
+                <li>✅ Ver ubicaciones guardadas</li>
+                <li>✅ Ver rutas calculadas anteriormente</li>
+                <li>✅ Usar GPS local</li>
+                <li>✅ Navegación por voz (limitada)</li>
+            </ul>
+        </div>
+        
+        <p>Conéctese a internet para acceder a todas las funciones.</p>
+        
+        <button onclick="window.location.reload()" style="
+            background: white;
+            color: #2e7d32;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+        ">
+            Reintentar conexión
+        </button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Caminos Calidad Providencia - Sistema de Optimización de Rutas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Sistema de planificación de rutas optimizadas para transporte agrícola del Ingenio Providencia">
+    
+    <!-- Leaflet CSS & JS (usando jsDelivr para evitar tracking prevention) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Leaflet Routing Machine -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+    
+    <!-- Leaflet Fullscreen -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.js"></script>
+    
+    <!-- Font Awesome & Material Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Roboto Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Nuestros estilos CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- ... (resto del HTML igual) ... -->
+
+    <!-- Cargar JavaScript en orden de dependencia -->
+    <script src="js/constants.js"></script>
+    <script src="js/state-manager.js"></script>
+    <script src="js/map-manager.js"></script>
+    <script src="js/gps-tracker.js"></script>
+    <script src="js/search-manager.js"></script>
+    <script src="js/route-calculator.js"></script>
+    <script src="js/voice-navigation.js"></script> <!-- Usa el archivo corregido -->
+    <script src="js/ui-manager.js"></script>
+    <script src="js/tracking-manager.js"></script> <!-- Si lo creaste -->
+    <script src="js/app.js"></script>
+</body>
+</html>

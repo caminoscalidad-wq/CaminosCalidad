@@ -1,0 +1,80 @@
+/* --- MODO OSCURO --- */
+body.dark-mode {
+    background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+    color: #e0e0e0;
+}
+
+body.dark-mode #sidebar {
+    background: #1e1e1e;
+    border-right-color: #333;
+}
+
+body.dark-mode .sidebar-content {
+    background: #121212;
+}
+
+body.dark-mode .section-card {
+    background: #2d2d2d;
+    border-left-color: var(--prov-green-main);
+}
+
+body.dark-mode input[type="text"] {
+    background: #2d2d2d;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode input[type="text"]:focus {
+    border-color: var(--prov-green-main);
+    background: #333;
+}
+
+body.dark-mode .search-results {
+    background: #2d2d2d;
+    border-color: #444;
+}
+
+body.dark-mode .search-results li {
+    border-bottom-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .search-results li:hover {
+    background: #333;
+}
+
+body.dark-mode .layer-controls {
+    background: #2d2d2d;
+    color: #e0e0e0;
+}
+
+body.dark-mode .custom-control-btn {
+    background: #2d2d2d;
+    color: #e0e0e0;
+}
+
+body.dark-mode .custom-control-btn:hover {
+    background: #333;
+}
+
+body.dark-mode .app-state {
+    background: #2d2d2d;
+    color: #e0e0e0;
+}
+
+body.dark-mode .leaflet-control-layers,
+body.dark-mode .leaflet-control-zoom,
+body.dark-mode .leaflet-control-fullscreen {
+    background: #2d2d2d;
+    color: #e0e0e0;
+}
+
+body.dark-mode .leaflet-control-layers label {
+    color: #e0e0e0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.dark-mode * {
+        transition-duration: 0.01ms !important;
+    }
+}
